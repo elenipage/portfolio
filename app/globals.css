@@ -1,26 +1,98 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-background: 253 250 247;
+  --color-surface: 248 240 235;
+  --color-surface-2: 242 229 222;
+  --color-foreground: 58 47 47;
+  --color-muted: 108 93 90;
+  --color-border: 227 213 205;
+  --color-accent-rose: 196 108 111;
+  --color-accent-lavender: 138 121 173;
+  --color-accent-gold: 163 128 62;
+}
+
+.dark {
+  --color-background: 30 27 29;
+  --color-surface: 40 35 38;
+  --color-surface-2: 50 44 47;
+  --color-foreground: 240 232 228;
+  --color-muted: 186 173 171;
+  --color-border: 70 61 63;
+  --color-accent-rose: 224 156 158;
+  --color-accent-lavender: 184 171 212;
+  --color-accent-gold: 216 184 130;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-background: rgb(var(--color-background));
+  --color-surface: rgb(var(--color-surface));
+  --color-surface-2: rgb(var(--color-surface-2));
+  --color-foreground: rgb(var(--color-foreground));
+  --color-muted: rgb(var(--color-muted));
+  --color-border: rgb(var(--color-border));
+  --color-accent-rose: rgb(var(--color-accent-rose));
+  --color-accent-lavender: rgb(var(--color-accent-lavender));
+  --color-accent-gold: rgb(var(--color-accent-gold));
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-heading: var(--font-space-grotesk);
+  --font-sans: var(--font-work-sans);
+
+  --animate-pixel-blink: pixel-blink 1.2s steps(2, jump-none) infinite;
+
+  @keyframes pixel-blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0.35;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-rose);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+.prose {
+  --tw-prose-body: var(--color-foreground);
+  --tw-prose-headings: var(--color-foreground);
+  --tw-prose-lead: var(--color-muted);
+  --tw-prose-links: var(--color-accent-rose);
+  --tw-prose-bold: var(--color-foreground);
+  --tw-prose-counters: var(--color-muted);
+  --tw-prose-bullets: var(--color-accent-lavender);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-foreground);
+  --tw-prose-quote-borders: var(--color-accent-rose);
+  --tw-prose-captions: var(--color-muted);
+  --tw-prose-code: var(--color-foreground);
+  --tw-prose-pre-code: var(--color-foreground);
+  --tw-prose-pre-bg: var(--color-surface);
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
 }

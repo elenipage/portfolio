@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+Personal portfolio and blog built with Next.js (App Router), Tailwind CSS, Framer Motion, and a local MDX blog.
 
-First, run the development server:
+## Getting started
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and fill in:
 
-## Learn More
+- `RESEND_API_KEY` — from [resend.com](https://resend.com)
+- `CONTACT_TO_EMAIL` — the inbox that should receive contact form enquiries
+- `CONTACT_FROM_EMAIL` — a sending address on a domain verified in Resend (use Resend's sandbox address for local development)
 
-To learn more about Next.js, take a look at the following resources:
+Without these, the contact form will show a friendly "not configured yet" error instead of sending.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editing your content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This site ships with realistic placeholder copy so you can see the real layout before writing your own words. Replace it here:
 
-## Deploy on Vercel
+- **Name, tagline, nav links, socials, bio facets** — [`lib/site-config.ts`](lib/site-config.ts)
+- **Projects shown in "Featured work"** — [`lib/projects.ts`](lib/projects.ts)
+- **Blog posts** — add/edit `.mdx` files in [`content/blog/`](content/blog/) (filename becomes the URL slug). Each post needs frontmatter: `title`, `date`, `summary`, `tags`.
+- **Section-specific prose** (hero intro, skills list) — inline in [`components/home/`](components/home/), marked with `PLACEHOLDER COPY` comments. Find them all with:
+  ```bash
+  grep -rn "PLACEHOLDER" components lib content
+  ```
+- **Colors** — all light/dark theme colors are CSS variables in [`app/globals.css`](app/globals.css) (`:root` for light, `.dark` for dark). Change them there and every component updates automatically.
+- **Fonts** — loaded in [`app/layout.tsx`](app/layout.tsx) via `next/font/google` (currently Space Grotesk for headings, Work Sans for body).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploying
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to GitHub and import the repo into [Vercel](https://vercel.com/new). Add the three environment variables above to the Vercel project (Production and Preview), then deploy.

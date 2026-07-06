@@ -65,7 +65,7 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        className="w-40 flex-shrink-0 sm:w-48"
+        className="w-60 flex-shrink-0 sm:w-60"
       >
         <PixelAvatar className="w-full" />
       </motion.div>

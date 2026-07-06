@@ -4,29 +4,29 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --color-background: 253 250 247;
-  --color-surface: 248 240 235;
-  --color-surface-2: 242 229 222;
-  --color-foreground: 58 47 47;
-  --color-muted: 108 93 90;
-  --color-border: 227 213 205;
-  --color-accent-rose: 196 108 111;
-  --color-accent-lavender: 138 121 173;
-  --color-accent-gold: 163 128 62;
-  --color-accent-teal: 59 121 112;
+  --color-background: 246 250 238;
+  --color-surface: 255 255 255;
+  --color-surface-2: 236 244 220;
+  --color-foreground: 28 38 20;
+  --color-muted: 94 108 78;
+  --color-border: 214 226 194;
+  --color-accent-rose: 94 168 58;
+  --color-accent-lavender: 72 158 158;
+  --color-accent-gold: 232 180 55;
+  --color-accent-teal: 72 158 158;
 }
 
 .dark {
-  --color-background: 30 27 29;
-  --color-surface: 40 35 38;
-  --color-surface-2: 50 44 47;
-  --color-foreground: 240 232 228;
-  --color-muted: 186 173 171;
-  --color-border: 70 61 63;
-  --color-accent-rose: 224 156 158;
-  --color-accent-lavender: 184 171 212;
-  --color-accent-gold: 216 184 130;
-  --color-accent-teal: 108 199 186;
+  --color-background: 16 14 12;
+  --color-surface: 30 25 20;
+  --color-surface-2: 40 33 26;
+  --color-foreground: 232 220 200;
+  --color-muted: 150 136 116;
+  --color-border: 52 42 32;
+  --color-accent-rose: 212 148 58;
+  --color-accent-lavender: 78 150 150;
+  --color-accent-gold: 158 96 40;
+  --color-accent-teal: 78 150 150;
 }
 
 @theme inline {
@@ -48,27 +48,15 @@
   --animate-pixel-blink: pixel-blink 1.2s steps(2, jump-none) infinite;
 
   @keyframes pixel-blink {
-    0%, 49% {
+    0%,
+    49% {
       opacity: 1;
     }
-    50%, 100% {
+    50%,
+    100% {
       opacity: 0.35;
     }
   }
-}
-
-html {
-  cursor: url("/cursor-arrow.svg") 2 2, auto;
-}
-
-a,
-button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-label[for],
-select {
-  cursor: url("/cursor-hand.svg") 8 2, pointer;
 }
 
 @layer base {
@@ -94,6 +82,20 @@ select {
     outline-offset: 2px;
     border-radius: 2px;
   }
+}
+
+html {
+  cursor: url("/cursor-arrow.svg") 2 2, auto;
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+label[for],
+select {
+  cursor: url("/cursor-hand.svg") 8 2, pointer;
 }
 
 .prose {

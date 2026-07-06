@@ -19,17 +19,17 @@ export const siteConfig = {
     {
       title: "Developer",
       description:
-        "I build accessible, well-crafted web applications — from prototypes to production, with an eye for the details that make software feel considered rather than just functional.",
+        "I build accessible, well-crafted web applications from prototypes to production, with an eye for the details that make software feel considered rather than just functional.",
     },
     {
       title: "Designer",
       description:
-        "I care about how things feel as much as how they work — interfaces that are calm, clear, and a little bit delightful, grounded in real research with real people.",
+        "I care about how things feel as much as how they work. I design interfaces that are calm, clear, and a little bit delightful, grounded in real research with real people.",
     },
     {
       title: "Innovator",
       description:
-        "At the London Interdisciplinary School, I bring together systems thinking, technology, and human behaviour to work on problems that don't sit neatly inside one discipline.",
+        "My educational background has equipped me to tackle complex problems from multiple angles, and to think about the wider systems in which products and services exist.",
     },
   ],
 } as const;

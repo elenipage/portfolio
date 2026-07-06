@@ -22,7 +22,7 @@ const skillGroups = [
 
 export function SkillsSection() {
   return (
-    <SectionReveal className="mx-auto max-w-5xl px-6 py-16">
+    <SectionReveal className="mx-auto max-w-6xl px-6 py-14">
       <h2 className="font-heading text-3xl font-bold tracking-tight">Focus areas</h2>
       <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {skillGroups.map((group) => (

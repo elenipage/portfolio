@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function FacetsSection() {
   return (
-    <SectionReveal id="about" className="mx-auto max-w-5xl px-6 py-16">
+    <SectionReveal id="about" className="mx-auto max-w-6xl px-6 py-14">
       <h2 className="flex items-center gap-2 font-heading text-3xl font-bold tracking-tight">
         <PixelIcon />
         Three ways I show up

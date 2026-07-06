@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import { FacetsSection } from "@/components/home/FacetsSection";
+import { QuestLog } from "@/components/home/QuestLog";
 import { SkillsSection } from "@/components/home/SkillsSection";
 import { FeaturedWork } from "@/components/home/FeaturedWork";
 import { BlogTeaser } from "@/components/home/BlogTeaser";
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <Hero />
       <FacetsSection />
+      <QuestLog />
       <SkillsSection />
       <FeaturedWork />
       <BlogTeaser />

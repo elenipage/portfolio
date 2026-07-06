@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Work_Sans } from "next/font/google";
+import { Space_Grotesk, Space_Mono, Work_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { MotionProvider } from "@/components/providers/MotionProvider";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -15,6 +15,13 @@ const spaceGrotesk = Space_Grotesk({
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
+  subsets: ["latin"],
+});
+
+// Used sparingly for the Quest Log's terminal/HUD styling — not the site's general body font.
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -48,7 +55,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} ${workSans.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${workSans.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>

@@ -9,7 +9,7 @@ export function BlogTeaser() {
   if (posts.length === 0) return null;
 
   return (
-    <SectionReveal className="mx-auto max-w-5xl px-6 py-16">
+    <SectionReveal className="mx-auto max-w-6xl px-6 py-14">
       <div className="flex items-baseline justify-between">
         <h2 className="font-heading text-3xl font-bold tracking-tight">From the blog</h2>
         <Link href="/blog" className="text-sm font-medium text-accent-rose hover:underline">

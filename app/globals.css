@@ -13,6 +13,7 @@
   --color-accent-rose: 196 108 111;
   --color-accent-lavender: 138 121 173;
   --color-accent-gold: 163 128 62;
+  --color-accent-teal: 59 121 112;
 }
 
 .dark {
@@ -25,6 +26,7 @@
   --color-accent-rose: 224 156 158;
   --color-accent-lavender: 184 171 212;
   --color-accent-gold: 216 184 130;
+  --color-accent-teal: 108 199 186;
 }
 
 @theme inline {
@@ -37,9 +39,11 @@
   --color-accent-rose: rgb(var(--color-accent-rose));
   --color-accent-lavender: rgb(var(--color-accent-lavender));
   --color-accent-gold: rgb(var(--color-accent-gold));
+  --color-accent-teal: rgb(var(--color-accent-teal));
 
   --font-heading: var(--font-space-grotesk);
   --font-sans: var(--font-work-sans);
+  --font-mono: var(--font-space-mono);
 
   --animate-pixel-blink: pixel-blink 1.2s steps(2, jump-none) infinite;
 
@@ -51,6 +55,20 @@
       opacity: 0.35;
     }
   }
+}
+
+html {
+  cursor: url("/cursor-arrow.svg") 2 2, auto;
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+label[for],
+select {
+  cursor: url("/cursor-hand.svg") 8 2, pointer;
 }
 
 @layer base {

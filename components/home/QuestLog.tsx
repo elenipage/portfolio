@@ -3,6 +3,7 @@
 import { useId, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Briefcase, Check, Code2, GraduationCap, Rocket, type LucideIcon } from "lucide-react";
+import { HudCorners } from "@/components/ui/HudCorners";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { quests, type Quest, type QuestIcon, type QuestStatus } from "@/lib/quests";
 import { cn } from "@/lib/utils";
@@ -169,7 +170,7 @@ function QuestCard({
       <span className="flex min-w-0 flex-1 flex-col gap-1.5">
         <span className="flex items-baseline justify-between gap-3">
           <span className="flex min-w-0 items-baseline gap-2">
-            <span className="flex-shrink-0 font-mono text-xs text-muted/70">
+            <span className="flex-shrink-0 font-mono text-xs text-muted">
               {String(index + 1).padStart(2, "0")}
             </span>
             <span className="font-heading text-base font-semibold">{quest.title}</span>
@@ -237,28 +238,5 @@ function QuestChecklist({
         ))}
       </ul>
     </div>
-  );
-}
-
-function HudCorners() {
-  return (
-    <>
-      <span
-        className="pointer-events-none absolute -left-px -top-px h-3 w-3 border-l-2 border-t-2 border-accent-teal"
-        aria-hidden="true"
-      />
-      <span
-        className="pointer-events-none absolute -right-px -top-px h-3 w-3 border-r-2 border-t-2 border-accent-teal"
-        aria-hidden="true"
-      />
-      <span
-        className="pointer-events-none absolute -bottom-px -left-px h-3 w-3 border-b-2 border-l-2 border-accent-teal"
-        aria-hidden="true"
-      />
-      <span
-        className="pointer-events-none absolute -bottom-px -right-px h-3 w-3 border-b-2 border-r-2 border-accent-teal"
-        aria-hidden="true"
-      />
-    </>
   );
 }

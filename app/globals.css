@@ -6,14 +6,14 @@
 :root {
   --color-background: 246 250 238;
   --color-surface: 255 255 255;
-  --color-surface-2: 236 244 220;
+  --color-surface-2: 226 234 210;
   --color-foreground: 28 38 20;
   --color-muted: 94 108 78;
   --color-border: 214 226 194;
-  --color-accent-rose: 94 168 58;
-  --color-accent-lavender: 72 158 158;
-  --color-accent-gold: 232 180 55;
-  --color-accent-teal: 72 158 158;
+  --color-accent-rose: 68 121 42;
+  --color-accent-lavender: 54 118 118;
+  --color-accent-gold: 139 102 16;
+  --color-accent-teal: 54 118 118;
 }
 
 .dark {
@@ -61,7 +61,7 @@
 
 @layer base {
   * {
-    border-color: var(--color-border);
+    border-color: rgb(var(--color-border));
   }
 
   html {
@@ -73,8 +73,8 @@
   }
 
   body {
-    background: var(--color-background);
-    color: var(--color-foreground);
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
   }
 
   :focus-visible {

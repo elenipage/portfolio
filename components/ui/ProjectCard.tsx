@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.tags.map((tag) => (
           <li
             key={tag}
-            className="rounded-full bg-accent-rose/15 px-3 py-1 text-xs font-medium text-accent-rose"
+            className="rounded-full bg-surface-2 px-3 py-1 text-xs font-medium text-accent-rose"
           >
             {tag}
           </li>

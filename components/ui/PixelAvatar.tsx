@@ -1,70 +1,35 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { HudCorners } from "@/components/ui/HudCorners";
 import { cn } from "@/lib/utils";
 
 type PixelAvatarProps = {
   className?: string;
 };
 
-// A 16x16 pixel-art self-portrait, framed in a circle where a headshot would
-// usually go. Row strings map to PIXEL_COLORS below; "." is transparent.
-const PIXEL_ROWS = [
-  "................",
-  ".....HHHHHH.....",
-  "...HHHHHHHHHH...",
-  "..HHHHHHHHHHHH..",
-  "..HHSSSSSSSHHH..",
-  ".HHSSSSSSSSSHHH.",
-  ".HSSSSSSSSSSSHH.",
-  ".HSSSESSSESSSHH.",
-  ".HSSSSSSSSSSSHH.",
-  ".HSSCCSSSCCSSHH.",
-  ".HSSSSMMSSSSHHH.",
-  "..SSSSSSSSSSHHH.",
-  "...SSSSSSSSSHHH.",
-  "...TTTTTTTTTT...",
-  "..TTTTTTTTTTTT..",
-  ".TTTTTTTTTTTTTT.",
-];
-
-// Hair and shirt follow the site's theme accents; skin, eyes, and blush stay
-// fixed so the little sprite reads consistently in light and dark mode.
-const PIXEL_COLORS: Record<string, string> = {
-  H: "#aa4329",
-  T: "rgb(var(--color-accent-lavender))",
-  S: "#e8b98a",
-  E: "#3a2f2f",
-  C: "#e3a9a0",
-  M: "#8a5a4a",
-};
-
 export function PixelAvatar({ className }: PixelAvatarProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
-      className={cn(
-        "flex aspect-square items-center justify-center overflow-hidden rounded-full border border-border bg-surface-2",
-        className
-      )}
-      animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
-      transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-    >
-      <svg
-        viewBox="0 0 16 16"
-        className="h-[85%] w-[85%]"
-        role="img"
-        aria-label="Pixel-art self portrait"
+    <div className={cn("flex flex-col items-center gap-2", className)}>
+      <motion.div
+        className="relative flex aspect-square w-full items-center justify-center border border-border bg-surface-2"
+        animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        {PIXEL_ROWS.map((row, y) =>
-          [...row].map((char, x) =>
-            char === "." ? null : (
-              <rect key={`${x}-${y}`} x={x} y={y} width={1} height={1} fill={PIXEL_COLORS[char]} />
-            )
-          )
-        )}
-      </svg>
-    </motion.div>
+        <HudCorners />
+        <Image
+          src="/Pixel_Leni_1.png"
+          alt="Pixel-art self portrait"
+          width={32}
+          height={32}
+          unoptimized
+          className="h-[92%] w-[92%] [image-rendering:pixelated]"
+        />
+      </motion.div>
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Eleni · Lv. 26</p>
+    </div>
   );
 }

@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {frontmatter.tags.map((tag) => (
             <li
               key={tag}
-              className="rounded-full bg-accent-lavender/20 px-3 py-1 text-xs font-medium text-accent-lavender"
+              className="rounded-full bg-surface-2 px-3 py-1 text-xs font-medium text-accent-lavender"
             >
               {tag}
             </li>

@@ -48,7 +48,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
       <header className="mb-10">
-        <time dateTime={frontmatter.date} className="text-sm text-muted">
+        <time dateTime={frontmatter.date} className="font-mono text-xs uppercase tracking-wide text-muted">
           {formatDate(frontmatter.date)}
         </time>
         <h1 className="mt-2 font-heading text-4xl font-bold tracking-tight">
@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {frontmatter.tags.map((tag) => (
             <li
               key={tag}
-              className="rounded-full bg-surface-2 px-3 py-1 text-xs font-medium text-accent-lavender"
+              className="border border-border px-2.5 py-1 font-mono text-[11px] uppercase tracking-wide text-accent-lavender"
             >
               {tag}
             </li>

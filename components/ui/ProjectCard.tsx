@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <motion.article
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="flex flex-col rounded-xl border border-border bg-surface p-6"
+      className="flex flex-col border border-border bg-surface p-6"
     >
       <h3 className="font-heading text-xl font-semibold">{project.title}</h3>
       <p className="mt-2 flex-1 text-muted">{project.description}</p>
@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.tags.map((tag) => (
           <li
             key={tag}
-            className="rounded-full bg-surface-2 px-3 py-1 text-xs font-medium text-accent-rose"
+            className="border border-border px-2.5 py-1 font-mono text-[11px] uppercase tracking-wide text-accent-rose"
           >
             {tag}
           </li>

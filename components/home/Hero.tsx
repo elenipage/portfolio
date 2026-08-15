@@ -48,13 +48,13 @@ export function Hero() {
         >
           <Link
             href="#work"
-            className="rounded-full bg-accent-rose px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="border border-foreground bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
             See my work
           </Link>
           <Link
             href="/contact"
-            className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-surface-2"
+            className="border border-border bg-surface px-6 py-3 text-sm font-medium transition-colors hover:bg-surface-2"
           >
             Get in touch
           </Link>
@@ -65,7 +65,7 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        className="w-60 flex-shrink-0 sm:w-60"
+        className="w-70 flex-shrink-0 sm:w-80"
       >
         <PixelAvatar className="w-full" />
       </motion.div>

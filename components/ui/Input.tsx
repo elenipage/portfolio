@@ -26,7 +26,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         aria-invalid={error ? true : undefined}
         aria-describedby={errorId}
         className={cn(
-          "rounded-lg border border-border bg-background px-4 py-2.5 text-foreground outline-none transition-colors focus-visible:border-accent-rose",
+          "border border-border bg-background px-4 py-2.5 text-foreground outline-none transition-colors focus-visible:border-accent-rose",
           error && "border-accent-rose",
           className
         )}

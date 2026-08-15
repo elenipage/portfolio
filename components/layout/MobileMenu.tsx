@@ -55,7 +55,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               type="button"
               onClick={onClose}
               aria-label="Close menu"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-surface-2"
+              className="inline-flex h-11 w-11 items-center justify-center border border-border hover:bg-surface-2"
             >
               <X className="h-6 w-6" aria-hidden="true" />
             </button>

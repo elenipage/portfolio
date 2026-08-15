@@ -22,20 +22,20 @@ const STATUS_META: Record<
   upcoming: {
     tag: "[ upcoming ]",
     eyebrow: "Upcoming quest",
-    accentText: "text-accent-gold",
-    iconBox: "border-accent-gold/60 text-accent-gold",
+    accentText: "text-quest-gold",
+    iconBox: "border-quest-gold/60 text-quest-gold",
   },
   "in-progress": {
     tag: "[ active ]",
     eyebrow: "Active quest",
-    accentText: "text-accent-teal",
-    iconBox: "border-accent-teal/60 text-accent-teal",
+    accentText: "text-quest-teal",
+    iconBox: "border-quest-teal/60 text-quest-teal",
   },
   completed: {
     tag: "[ complete ]",
     eyebrow: "Quest complete",
-    accentText: "text-muted",
-    iconBox: "border-dashed border-border text-muted",
+    accentText: "text-quest-muted",
+    iconBox: "border-dashed border-quest-border text-quest-muted",
   },
 };
 
@@ -59,20 +59,20 @@ export function QuestLog() {
       <h2 className="font-heading text-3xl font-bold tracking-tight">Quest log</h2>
       <p className="mt-2 text-muted">A running log of roles, projects, and qualifications.</p>
 
-      <div className="relative mt-10 border border-border">
-        <HudCorners />
+      <div className="relative mt-10 border border-quest-border bg-quest-bg">
+        <HudCorners colorClassName="border-quest-teal" />
 
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-border bg-surface-2/60 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted sm:px-6">
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-quest-border bg-quest-surface px-4 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-quest-muted sm:px-6">
           <span>Quest log</span>
           <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>
-              <span className="text-accent-teal">{activeCount}</span> active
+              <span className="text-quest-teal">{activeCount}</span> active
             </span>
             <span>
-              <span className="text-accent-gold">{upcomingCount}</span> upcoming
+              <span className="text-quest-gold">{upcomingCount}</span> upcoming
             </span>
             <span>{completeCount} complete</span>
-            <span className="text-accent-teal">{totalXp} xp</span>
+            <span className="text-quest-teal">{totalXp} xp</span>
           </span>
         </div>
 
@@ -118,9 +118,9 @@ export function QuestLog() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="relative border border-border bg-surface p-5"
+                  className="relative border border-quest-border bg-quest-surface p-5"
                 >
-                  <HudCorners />
+                  <HudCorners colorClassName="border-quest-teal" />
                   <QuestChecklist quest={selectedQuest} idPrefix="desktop" showTitle />
                 </motion.div>
               )}
@@ -156,10 +156,10 @@ function QuestCard({
       aria-controls={`${desktopPanelId} ${mobilePanelId}`}
       onClick={onSelect}
       className={cn(
-        "flex w-full items-start gap-3 border-y border-r border-l-4 bg-surface p-3 text-left transition-colors sm:gap-4 sm:p-4",
+        "flex w-full items-start gap-3 border-y border-r border-l-4 bg-quest-surface p-3 text-left transition-colors sm:gap-4 sm:p-4",
         isSelected
-          ? "border-l-accent-rose border-y-border border-r-border bg-surface-2"
-          : "border-l-transparent border-y-border border-r-border hover:bg-surface-2/60",
+          ? "border-l-accent-rose border-y-quest-border border-r-quest-border"
+          : "border-l-transparent border-y-quest-border border-r-quest-border hover:bg-quest-teal/10 dark:hover:bg-quest-gold/15",
         isCompleted && !isSelected && "opacity-60"
       )}
     >
@@ -170,12 +170,12 @@ function QuestCard({
       <span className="flex min-w-0 flex-1 flex-col gap-1.5">
         <span className="flex items-baseline justify-between gap-3">
           <span className="flex min-w-0 items-baseline gap-2">
-            <span className="flex-shrink-0 font-mono text-xs text-muted">
+            <span className="flex-shrink-0 font-mono text-xs text-quest-muted">
               {String(index + 1).padStart(2, "0")}
             </span>
             <span className="font-heading text-base font-semibold">{quest.title}</span>
           </span>
-          <span className="flex-shrink-0 whitespace-nowrap font-mono text-[11px] font-bold tracking-wide text-accent-teal">
+          <span className="flex-shrink-0 whitespace-nowrap font-mono text-[11px] font-bold tracking-wide text-quest-teal">
             +{quest.xp} XP
           </span>
         </span>
@@ -207,30 +207,30 @@ function QuestChecklist({
       aria-label={showTitle ? undefined : quest.title}
     >
       {showTitle && (
-        <div className="mb-4 flex items-start justify-between gap-3 border-b border-border pb-3">
+        <div className="mb-4 flex items-start justify-between gap-3 border-b border-quest-border pb-3">
           <div>
             <p className={cn("font-mono text-[10px] uppercase tracking-[0.2em]", meta.accentText)}>{meta.eyebrow}</p>
             <h3 id={headingId} className="mt-1 font-heading text-lg font-semibold">
               {quest.title}
             </h3>
           </div>
-          <span className="whitespace-nowrap font-mono text-xs font-bold text-accent-teal">+{quest.xp} XP</span>
+          <span className="whitespace-nowrap font-mono text-xs font-bold text-quest-teal">+{quest.xp} XP</span>
         </div>
       )}
-      <p className="mb-4 text-sm text-muted">{quest.description}</p>
-      <ul className={cn("flex flex-col gap-3", !showTitle && "border border-border bg-surface p-3")}>
+      <p className="mb-4 text-sm text-quest-muted">{quest.description}</p>
+      <ul className={cn("flex flex-col gap-3", !showTitle && "border border-quest-border bg-quest-surface p-3")}>
         {quest.checklist.map((item) => (
           <li key={item.text} className="flex items-start gap-3 text-sm">
             <span
               className={cn(
                 "mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center border",
-                item.done ? "border-border text-muted" : "border-accent-teal/70"
+                item.done ? "border-quest-border text-quest-muted" : "border-quest-teal/70"
               )}
               aria-hidden="true"
             >
               {item.done && <Check className="h-3 w-3" />}
             </span>
-            <span className={cn(item.done && "text-muted")}>
+            <span className={cn(item.done && "text-quest-muted")}>
               <span className="sr-only">{item.done ? "Completed: " : "Ongoing: "}</span>
               {item.text}
             </span>

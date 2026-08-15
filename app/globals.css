@@ -4,42 +4,65 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --color-background: 246 250 238;
-  --color-surface: 255 255 255;
-  --color-surface-2: 226 234 210;
-  --color-foreground: 28 38 20;
-  --color-muted: 94 108 78;
-  --color-border: 214 226 194;
-  --color-accent-rose: 68 121 42;
-  --color-accent-lavender: 54 118 118;
-  --color-accent-gold: 139 102 16;
-  --color-accent-teal: 54 118 118;
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2f2f2;
+  --color-foreground: #111111;
+  --color-muted: #5c5c5c;
+  --color-border: #d9d9d9;
+  --color-accent-rose: #438422;
+  --color-accent-lavender: #52804b;
+  --color-accent-gold: #357036;
+  --color-accent-teal: #52804b;
+
+  /* Light Quest Log */
+  --color-quest-bg: #bfe0e8;
+  --color-quest-surface: #effafc;
+  --color-quest-border: #4c7a3a;
+  --color-quest-muted: #50777f;
+  --color-quest-teal: #1c7d7a;
+  --color-quest-gold: #93690d;
 }
 
 .dark {
-  --color-background: 16 14 12;
-  --color-surface: 30 25 20;
-  --color-surface-2: 40 33 26;
-  --color-foreground: 232 220 200;
-  --color-muted: 150 136 116;
-  --color-border: 52 42 32;
-  --color-accent-rose: 212 148 58;
-  --color-accent-lavender: 78 150 150;
-  --color-accent-gold: 158 96 40;
-  --color-accent-teal: 78 150 150;
+  --color-background: #1b1b1b;
+  --color-surface: #1b1b1b;
+  --color-surface-2: #191510;
+  --color-foreground: #f5f5f5;
+  --color-muted: #a3a3a3;
+  --color-border: #545454;
+  --color-accent-rose: #d4943a;
+  --color-accent-lavender: #4e9696;
+  --color-accent-gold: #c57832;
+  --color-accent-teal: #4e9696;
+
+  /* Dark Quest Log */
+  --color-quest-bg: #191510;
+  --color-quest-surface: #110e0b;
+  --color-quest-border: #644525;
+  --color-quest-muted: #968874;
+  --color-quest-teal: #4e9696;
+  --color-quest-gold: #c57832;
 }
 
 @theme inline {
-  --color-background: rgb(var(--color-background));
-  --color-surface: rgb(var(--color-surface));
-  --color-surface-2: rgb(var(--color-surface-2));
-  --color-foreground: rgb(var(--color-foreground));
-  --color-muted: rgb(var(--color-muted));
-  --color-border: rgb(var(--color-border));
-  --color-accent-rose: rgb(var(--color-accent-rose));
-  --color-accent-lavender: rgb(var(--color-accent-lavender));
-  --color-accent-gold: rgb(var(--color-accent-gold));
-  --color-accent-teal: rgb(var(--color-accent-teal));
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-accent-rose: var(--color-accent-rose);
+  --color-accent-lavender: var(--color-accent-lavender);
+  --color-accent-gold: var(--color-accent-gold);
+  --color-accent-teal: var(--color-accent-teal);
+
+  --color-quest-bg: var(--color-quest-bg);
+  --color-quest-surface: var(--color-quest-surface);
+  --color-quest-border: var(--color-quest-border);
+  --color-quest-muted: var(--color-quest-muted);
+  --color-quest-teal: var(--color-quest-teal);
+  --color-quest-gold: var(--color-quest-gold);
 
   --font-heading: var(--font-space-grotesk);
   --font-sans: var(--font-work-sans);
@@ -61,7 +84,7 @@
 
 @layer base {
   * {
-    border-color: rgb(var(--color-border));
+    border-color: var(--color-border);
   }
 
   html {
@@ -73,19 +96,20 @@
   }
 
   body {
-    background: rgb(var(--color-background));
-    color: rgb(var(--color-foreground));
+    background: var(--color-background);
+    color: var(--color-foreground);
   }
 
   :focus-visible {
     outline: 2px solid var(--color-accent-rose);
     outline-offset: 2px;
-    border-radius: 2px;
   }
 }
 
 html {
-  cursor: url("/cursor-arrow.svg") 2 2, auto;
+  cursor:
+    url("/cursor-arrow.svg") 2 2,
+    auto;
 }
 
 a,
@@ -95,7 +119,9 @@ input[type="submit"],
 input[type="button"],
 label[for],
 select {
-  cursor: url("/cursor-hand.svg") 8 2, pointer;
+  cursor:
+    url("/cursor-hand.svg") 8 2,
+    pointer;
 }
 
 .prose {

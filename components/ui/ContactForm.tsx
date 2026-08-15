@@ -66,7 +66,7 @@ export function ContactForm() {
         role="status"
         aria-live="polite"
         tabIndex={-1}
-        className="rounded-xl border border-accent-gold/40 bg-accent-gold/10 p-6 text-foreground outline-none"
+        className="border border-border border-l-4 border-l-accent-gold bg-background p-6 text-foreground outline-none"
       >
         <p className="font-heading text-lg font-semibold">Message sent — thank you.</p>
         <p className="mt-2 text-muted">
@@ -84,7 +84,7 @@ export function ContactForm() {
           role="alert"
           aria-live="assertive"
           tabIndex={-1}
-          className="rounded-xl border border-accent-rose/40 bg-accent-rose/10 p-4 text-sm text-foreground outline-none"
+          className="border border-border border-l-4 border-l-accent-rose bg-background p-4 text-sm text-foreground outline-none"
         >
           {state.message}
         </div>

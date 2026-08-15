@@ -19,7 +19,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
       className={cn(
-        "inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-surface-2",
+        "inline-flex h-11 w-11 items-center justify-center border border-border text-foreground transition-colors hover:bg-surface-2",
         className
       )}
     >

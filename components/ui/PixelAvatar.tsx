@@ -23,13 +23,13 @@ export function PixelAvatar({ className }: PixelAvatarProps) {
         <Image
           src="/Pixel_Leni_1.png"
           alt="Pixel-art self portrait"
-          width={32}
-          height={32}
+          width={75}
+          height={75}
           unoptimized
           className="h-[92%] w-[92%] [image-rendering:pixelated]"
         />
       </motion.div>
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Eleni · Lv. 26</p>
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Eleni · Lv. 27</p>
     </div>
   );
 }

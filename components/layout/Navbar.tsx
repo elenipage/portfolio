@@ -12,7 +12,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-border bg-surface/80 backdrop-blur">
         <nav
           aria-label="Primary"
           className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
@@ -42,7 +42,7 @@ export function Navbar() {
               aria-label="Open menu"
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-surface-2 md:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center border border-border hover:bg-surface-2 md:hidden"
             >
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>

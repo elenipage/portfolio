@@ -27,7 +27,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(function 
         aria-describedby={errorId}
         rows={6}
         className={cn(
-          "resize-y rounded-lg border border-border bg-background px-4 py-2.5 text-foreground outline-none transition-colors focus-visible:border-accent-rose",
+          "resize-y border border-border bg-background px-4 py-2.5 text-foreground outline-none transition-colors focus-visible:border-accent-rose",
           error && "border-accent-rose",
           className
         )}

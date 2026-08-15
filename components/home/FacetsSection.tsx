@@ -4,17 +4,12 @@ import { siteConfig } from "@/lib/site-config";
 
 export function FacetsSection() {
   return (
-    <SectionReveal id="about" className="mx-auto max-w-6xl px-6 py-14">
-      <h2 className="flex items-center gap-2 font-heading text-3xl font-bold tracking-tight">
-        <PixelIcon />
-        Three ways I show up
-      </h2>
+    <SectionReveal className="mx-auto max-w-6xl px-6 py-14">
       <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {siteConfig.facets.map((facet) => (
-          <div key={facet.title} className="rounded-xl border border-border bg-surface p-6">
-            <h3 className="font-heading text-xl font-semibold text-accent-rose">
-              {facet.title}
-            </h3>
+        {siteConfig.facets.map((facet, index) => (
+          <div key={facet.title} className="border border-border bg-surface p-6">
+            <span className="font-mono text-xs text-muted">{String(index + 1).padStart(2, "0")}</span>
+            <h3 className="mt-1 font-heading text-xl font-semibold text-accent-rose">{facet.title}</h3>
             <p className="mt-3 text-muted">{facet.description}</p>
           </div>
         ))}

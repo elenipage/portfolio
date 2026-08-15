@@ -6,7 +6,6 @@ export const siteConfig = {
   url: "https://example.com",
   navLinks: [
     { href: "/#work", label: "Work" },
-    { href: "/#about", label: "About" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ],

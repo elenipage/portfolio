@@ -4,10 +4,10 @@ import { PixelIcon } from "@/components/ui/PixelIcon";
 export function Footer() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-10 text-sm text-muted md:flex-row md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-10 font-mono text-xs uppercase tracking-wide text-muted md:flex-row md:justify-between">
         <p className="flex items-center gap-2">
           <PixelIcon />
-          {new Date().getFullYear()} {siteConfig.name}. Made with care.
+          {new Date().getFullYear()} {siteConfig.name} — made with care
         </p>
         <ul className="flex items-center gap-6">
           {siteConfig.socials.map((social) => (

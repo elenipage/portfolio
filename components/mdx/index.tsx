@@ -19,7 +19,7 @@ export const mdxComponents: MDXComponents = {
   },
   img: (props: ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element -- MDX body images are arbitrary remote URLs, not next/image compatible
-    <img {...props} alt={props.alt ?? ""} className="rounded-lg border border-border" />
+    <img {...props} alt={props.alt ?? ""} className="border border-border" />
   ),
   blockquote: (props) => (
     <blockquote
@@ -28,6 +28,6 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   code: (props) => (
-    <code className="rounded bg-surface-2 px-1.5 py-0.5 text-[0.9em]" {...props} />
+    <code className="bg-surface-2 px-1.5 py-0.5 font-mono text-[0.9em]" {...props} />
   ),
 };

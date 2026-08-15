@@ -18,6 +18,10 @@ export type Post = {
 };
 
 export function getAllPostSlugs(): string[] {
+  if (!fs.existsSync(BLOG_DIR)) {
+    return [];
+  }
+
   return fs
     .readdirSync(BLOG_DIR)
     .filter((file) => file.endsWith(".mdx"))

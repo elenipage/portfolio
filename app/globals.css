@@ -14,6 +14,7 @@
   --color-accent-lavender: #52804b;
   --color-accent-gold: #357036;
   --color-accent-teal: #52804b;
+  --color-grid-dot: #6c6c6c;
 
   /* Light Quest Log */
   --color-quest-bg: #bfe0e8;
@@ -35,6 +36,9 @@
   --color-accent-lavender: #4e9696;
   --color-accent-gold: #c57832;
   --color-accent-teal: #4e9696;
+
+  /* Lighter than --color-muted, so the grid stays visible against the dark background. */
+  --color-grid-dot: #afafaf;
 
   /* Dark Quest Log */
   --color-quest-bg: #191510;

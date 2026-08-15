@@ -5,6 +5,7 @@ import { MotionProvider } from "@/components/providers/MotionProvider";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { PixelGridBackground } from "@/components/ui/PixelGridBackground";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -57,9 +58,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${workSans.variable} ${spaceMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="relative flex min-h-full flex-col font-sans">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <MotionProvider>
+            <PixelGridBackground spacing={18} dotSize={2} />
             <SkipLink />
             <Navbar />
             <main id="main-content" className="flex-1">

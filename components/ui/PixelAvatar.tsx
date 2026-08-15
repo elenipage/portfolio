@@ -26,7 +26,7 @@ export function PixelAvatar({ className }: PixelAvatarProps) {
           width={75}
           height={75}
           unoptimized
-          className="h-[92%] w-[92%] [image-rendering:pixelated]"
+          className="h-[100%] w-[100%] [image-rendering:pixelated]"
         />
       </motion.div>
       <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Eleni · Lv. 27</p>

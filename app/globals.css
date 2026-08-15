@@ -108,7 +108,7 @@
 
 html {
   cursor:
-    url("/cursor-arrow.svg") 2 2,
+    url("/cursor-arrow.svg") 4 1,
     auto;
 }
 
@@ -120,7 +120,7 @@ input[type="button"],
 label[for],
 select {
   cursor:
-    url("/cursor-hand.svg") 8 2,
+    url("/cursor-pointer.svg") 4 1,
     pointer;
 }
 

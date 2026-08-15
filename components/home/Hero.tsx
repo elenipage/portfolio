@@ -17,7 +17,7 @@ export function Hero() {
           className="flex items-center gap-2 text-sm font-medium text-accent-gold"
         >
           <PixelIcon />
-          Hello, I&apos;m Eleni
+          Hello, I&apos;m Leni
         </motion.span>
 
         <motion.h1

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Eleni Page",
   tagline: "Developer, designer, and interdisciplinary innovator.",
   description:
-    "Portfolio and blog of Eleni Page — a developer and designer building thoughtful technology, currently studying at the London Interdisciplinary School.",
+    "Portfolio and blog of Eleni Page - a developer and designer building thoughtful technology, currently studying at the London Interdisciplinary School.",
   url: "https://example.com",
   navLinks: [
     { href: "/#work", label: "Work" },

@@ -55,7 +55,7 @@ export function QuestLog() {
   const totalXp = quests.reduce((sum, quest) => sum + quest.xp, 0);
 
   return (
-    <SectionReveal className="mx-auto max-w-6xl px-6 py-14">
+    <SectionReveal id="quest-log" className="mx-auto max-w-6xl px-6 py-14">
       <h2 className="font-heading text-3xl font-bold tracking-tight">Quest log</h2>
       <p className="mt-2 text-muted">A running log of roles, projects, and qualifications.</p>
 

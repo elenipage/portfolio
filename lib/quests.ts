@@ -22,22 +22,21 @@ export type Quest = {
 // XP values are a rough, subjective weighting — tune freely.
 export const quests: Quest[] = [
   {
-    id: "lis-masters",
-    title:
-      "London Interdisciplinary School: MASc Complex Systems and Problems",
-    status: "upcoming",
-    icon: "school",
-    xp: 500,
-    description:
-      "Starting a masters degree to further deepen my ability to solve complex problems from an interdisciplinary lens.",
-    checklist: [
-      { text: "Starts September 2026", done: false },
-      {
-        text: "Deepening interdisciplinary approaches to complex systems and problems",
-        done: false,
-      },
-    ],
-  },
+  id: "lis-masters",
+  title: "London Interdisciplinary School: MASc Complex Systems and Problems",
+  status: "upcoming",
+  icon: "school",
+  xp: 600,
+  description:
+    "Starting a masters degree to further deepen my ability to solve complex problems from an interdisciplinary lens.",
+  checklist: [
+    { text: "Starts September 2026", done: false },
+    { text: "Deepening interdisciplinary approaches to complex systems and problems", done: false },
+    { text: "Building quantitative and qualitative research methods, such as stats, Python, NLP, experimental design", done: false },
+    { text: "Explore an elective in a real-world problem area: AI, sustainability, or human behaviour", done: false },
+    { text: "Capstone project: complete research and produce an original piece of work on a problem of my choosing", done: false },
+  ],
+},
   {
     id: "force24",
     title: "Force24: Technical Services Engineer & Technical Project Manager",
@@ -76,7 +75,7 @@ export const quests: Quest[] = [
     title: "Kindred",
     status: "in-progress",
     icon: "rocket",
-    xp: 600,
+    xp: 500,
     description: "Building an app tackling youth isolation in West Yorkshire.",
     checklist: [
       {

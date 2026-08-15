@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Hero() {
   return (
-    <div className="mx-auto flex max-w-6xl flex-col items-start gap-12 px-6 pb-16 pt-16 sm:pt-24 md:flex-row md:items-center md:justify-between">
+    <div className="mx-auto flex max-w-6xl flex-col items-start gap-12 px-6 pb-5 pt-16 sm:pt-24 md:flex-row md:items-center md:justify-between">
       <div className="flex max-w-2xl flex-col items-start">
         <motion.span
           initial={{ opacity: 0, y: 12 }}

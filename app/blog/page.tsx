@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import { BlogPostCard } from "@/components/ui/BlogPostCard";
 import { SectionReveal } from "@/components/ui/SectionReveal";
@@ -18,11 +19,28 @@ export default function BlogPage() {
         Updates on what I&apos;m building, designing, and thinking about at LIS.
       </p>
 
-      <div className="mt-10 flex flex-col gap-6">
-        {posts.map((post) => (
-          <BlogPostCard key={post.slug} post={post} />
-        ))}
-      </div>
+      {posts.length === 0 ? (
+        <div className="mt-10 border border-border border-l-4 border-l-accent-gold bg-surface p-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-gold">Coming soon</p>
+          <p className="mt-2 text-muted">
+            Nothing published here yet - the first posts are in progress. In the meantime, take a look at{" "}
+            <Link href="/#work" className="text-accent-rose hover:underline">
+              featured work
+            </Link>{" "}
+            or the{" "}
+            <Link href="/#quest-log" className="text-accent-rose hover:underline">
+              quest log
+            </Link>
+            .
+          </p>
+        </div>
+      ) : (
+        <div className="mt-10 flex flex-col gap-6">
+          {posts.map((post) => (
+            <BlogPostCard key={post.slug} post={post} />
+          ))}
+        </div>
+      )}
     </SectionReveal>
   );
 }
